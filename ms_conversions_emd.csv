@@ -1,6 +1,5 @@
 ﻿oscem,fromformat,optionals,units,crunch,type
 ,,,,,
-instrument.microscope.class,Instrument.InstrumentClass,,,,String
 instrument.microscope.model,Instrument.InstrumentModel,,,,String
 instrument.microscope.manufacturer,Instrument.Manufacturer,,,,String
 instrument.imaging,General.title,,,,String
@@ -23,11 +22,11 @@ acquisition.binning_camera.height,Detectors.ImagingDetector1.Binning.height,,,,I
 acquisition.binning_camera.width,Detectors.ImagingDetector1.Binning.width,,,,Int
 acquisition.pixel_size,BinaryResult.PixelSize.height,,Å,10000000000,Float64
 ,,,,,
-acquisition.detectors[N].name,Detectors.ImagingDetector1.DetectorName;Detectors.Detector-N.DetectorName,,,,String
-acquisition.detectors[N].mode,Detectors.ImagingDetector1.DetectorType;Detectors.Detector-N.DetectorType,,,,String
-acquisition.detectors[N].dispersion,;Detectors.Detector-N.Dispersion,,eV,,Float64
-acquisition.detectors[N].collection_angle.minimal,;Detectors.Detector-N.CollectionAngleRange.begin,,mrad,1000,Float64
-acquisition.detectors[N].collection_angle.maximal,;Detectors.Detector-N.CollectionAngleRange.end,,mrad,1000,Float64
+acquisition.detectors[N].name,Detectors.ImagingDetector1.DetectorName;Detectors.Detector-[N].DetectorName,,,,String
+acquisition.detectors[N].mode,Detectors.ImagingDetector1.DetectorType;Detectors.Detector-[N].DetectorType,,,,String
+acquisition.detectors[N].dispersion,;Detectors.Detector-[N].Dispersion,,eV,,Float64
+acquisition.detectors[N].collection_angle.minimal,;Detectors.Detector-[N].CollectionAngleRange.begin,,mrad,1000,Float64
+acquisition.detectors[N].collection_angle.maximal,;Detectors.Detector-[N].CollectionAngleRange.end,,mrad,1000,Float64
 ,,,,,
 sample.general.name,Sample.SampleId,,,,String
 sample.general.description,Sample.SampleDescription,,,,String

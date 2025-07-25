@@ -1,6 +1,5 @@
 ﻿oscem,fromformat,optionals,units,crunch,type
 ,,,,,
-instrument.microscope.class,,,,,String
 instrument.microscope.model,,,,,String
 instrument.microscope.manufacturer,,,,,String
 instrument.imaging,filter.mode,Signal.signal_type,,,String
@@ -23,7 +22,7 @@ acquisition.binning_camera.height,camera.binning[0],,,,Int
 acquisition.binning_camera.width,camera.binning[1],,,,Int
 acquisition.pixel_size,camera.pixel_size,,Å,10000000000,Float64
 ,,,,,
-acquisition.detectors[N].name,source.detector_config.description,,,,String
+acquisition.detectors[N].name,source.detector_config.description;,,,,String
 acquisition.detectors[N].mode,;filter.mode,,,,String
 acquisition.detectors[N].dispersion,;filter.dispersion,,eV,,Float64
 acquisition.detectors[N].collection_angle.minimal,,,mrad,1000,Float64
