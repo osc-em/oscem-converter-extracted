@@ -13,7 +13,7 @@ import (
 	"github.com/osc-em/Converter/basetypes"
 )
 
-//go:embed conversions.csv
+//go:embed csv/ls_conversions.csv
 var embedded embed.FS
 
 type FieldSpec struct {
@@ -148,9 +148,9 @@ func loadMappingCSV(mappingPath string) ([]csvextract, error) {
 
 // Read and parse the mapping CSV file
 func readCSVFile(content embed.FS) ([]csvextract, error) {
-	file, err := content.Open("conversions.csv")
+	file, err := content.Open("csv/ls_conversions.csv")
 	if err != nil {
-		return nil, fmt.Errorf("could not open conversions.csv: %w", err)
+		return nil, fmt.Errorf("could not open ls_conversions.csv: %w", err)
 	}
 	defer file.Close()
 
