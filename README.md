@@ -54,8 +54,9 @@ This also means that in order to use the table on a new or extended schema you a
 ### Materials science: `ms_conversions_emd.csv`, `ms_conversions_prz.csv`
 
 To reduce complexity, a separate file was created for each materials science metadata format.
-These files follow the structure described above.
+Currently, the `.emd` and `.prz` metadata file formats are covered.
 
+These mapping tables follow the structure that was described above.
 They make extensive use of the `[N]` notation for arrays, especially to accomodate the usage of multiple detectors per acquisition.
 It can be used in the following columns:
 - **oscem**: Here `[N]` signifies that this OSC-EM field in an array. The elements of this array will be objects whose keys can be defined using the `.` separator as usual.
