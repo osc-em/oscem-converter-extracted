@@ -5,7 +5,7 @@ Converts a flat json into data conforming to the OSC-EM schema.
 The converter can take any **flat json** to convert to OSC-EM, provided a mapping table in form of `.csv` .
 The csv needs to follow a similar approach to the [default one](csv/ls_conversions.csv) for life sciences, albeit at a reduced complexity, like the ones for [materials science](#materials-science-ms_conversions_emdcsv-ms_conversions_przcsv).
 It requires the following columns:
-- **oscem**: The OSC-EM field to mapped to. Fields are `.` separated for nesting. The `[N]` notation is used for arrays.
+- **oscem**: The OSC-EM field to map to. Fields are `.` separated for nesting. The `[N]` notation is used for arrays.
 - **fromformat**: What the key is called in the input format json.
 - **optionals**: If there are any optional namings that might map to the same field, at an increased priority if present.
 - **units**: The unit of any given field, if applicable.
