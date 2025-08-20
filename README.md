@@ -60,10 +60,10 @@ These mapping tables follow the structure that was described above.
 They make extensive use of the `[N]` notation for arrays, especially to accomodate the usage of multiple detectors per acquisition.
 It can be used in the following columns:
 - **oscem**: Here `[N]` signifies that this OSC-EM field in an array. The elements of this array will be objects whose keys can be defined using the `.` separator as usual.
-- **fromformat**: When `[N]` is used here it operates a placeholder signifying that more than one metadata keys that follow a similar name convension might map to this OSC-EM field.
+- **fromformat**: When `[N]` is used here it operates as a placeholder, signifying that more than one metadata keys that follow a similar name convension might map to this OSC-EM field.
 For example, _Detectors.Detector-[N].DetectorName_ means that there could be multiple detectors following this naming pattern, where `[N]` could be replaced by anything, i.e. _Detectors.Detector-1.DetectorName_, _Detectors.Detector-ABC.DetectorName_, etc.
 All of those will be collected and form separate objects that will be added as elements to the corresponding array.
-In the case that the metadata keys do not follow a specific pattern that can be covered by the `[N]` notation, it is also possible to map them to the OSC-EM field inividually, by using a `;` separator.
+In the case that the metadata keys do not follow a specific naming pattern that can be covered by the `[N]` notation, it is also possible to map them to the OSC-EM field inividually, by using a `;` separator within each _fromformat_ cell value.
 
 ### Mapping to PDB: `pdb_conversions.csv`
 
