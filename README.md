@@ -36,6 +36,9 @@ import github.com/oscem/Converter
 All mapping tables can be found in the `csv/` directory.
 When modifying any table, it is crucial to save it in UTF-8 compatible format - otherwise some of the units will fail.
 
+The [mapping table template](csv/conversions_template.csv) provides a list of all OSC-EM fields that can be mapped to, along with their expected types and units.
+It can be used as a guide to create a new mapping table, by filling in the columns described above.
+
 The nesting of the OSC-EM schema is described as `.` separated in the first column of the table.
 Arrays use the `[N]` notation.
 
