@@ -142,3 +142,7 @@ sample.grid.pretreatment_type,_em_grid_pretreatment.type,
 sample.grid.pretreatment_time,_em_grid_pretreatment.time,
 sample.grid.pretreatment_pressure,_em_grid_pretreatment.pressure,
 sample.grid.pretreatment_atmosphere,_em_grid_pretreatment.atmosphere,
+,,
+processing.movies.dose_per_image,_em_image_recording.avg_electron_dose_per_image
+processing.micrographs.number_micrographs,_em_image_recording.num_real_images
+processing.volumes.vol_resolution,_em_3d_reconstruction.resolution
