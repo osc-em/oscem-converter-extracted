@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	conversion "github.com/osc-em/Converter"
+	conversion "github.com/osc-em/oscem-converter-extracted"
 )
 
 func main() {

@@ -1,5 +1,5 @@
 # Conversions
-Converts a flat json into data conforming to the OSC-EM schema. 
+Converts a flat json into data conforming to the OSC-EM schema.
 
 ## Usage
 The converter can take any **flat json** to convert to OSC-EM, provided a mapping table in form of `.csv` .
@@ -9,7 +9,7 @@ It requires the following columns:
 - **fromformat**: What the key is called in the input format json.
 - **optionals**: If there are any optional namings that might map to the same field, at an increased priority if present.
 - **units**: The unit of any given field, if applicable.
-- **crunch**: The conversion factor to arrive at your desired output unit, based on the value in the input json. 
+- **crunch**: The conversion factor to arrive at your desired output unit, based on the value in the input json.
 - **type**: The type of the field. Allowed values are: Int, String, Float64, Bool.
 
 When using the Converter as a standalone tool, you can compile it using the `cmd/convert_cli/` path, then:
@@ -21,7 +21,7 @@ go build main.go
 It accepts the following inputs:
 - `-i`: input json
 - `-o`: output filename (optional, will take directory name if none provided)
-- `-map`: path to the mapping file described above 
+- `-map`: path to the mapping file described above
 - `-cs`: allows you to provide the cs (spherical aberration) value for your instrument (optional)
 - `-gain_flip_rotate`: allows to provide instructions on gainreference flipping if needed (optional)
 
@@ -71,4 +71,4 @@ In the case that the metadata keys do not follow a specific naming pattern that 
 ### Mapping to PDB: `pdb_conversions.csv`
 
 Lastly, this table maps (parts of) the OSC-EM schema to the PDB/EMDB mmcif dictionary.
-This is required for the [oscem-to-mmcif-converter](https://github.com/osc-em/converter-OSCEM-to-mmCIF).
+This is required for the [oscem-to-mmcif-converter](https://github.com/osc-em/oscem-converter-mmcif).
