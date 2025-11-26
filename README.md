@@ -44,8 +44,8 @@ It accepts the following inputs:
 
 If you want to use it inside of another go application you can also just import it as a module using:
 
-```sh
-import github.com/oscem/Converter
+```go
+import "github.com/osc-em/oscem-converter-extracted"
 ```
 
 ## Mapping Tables
