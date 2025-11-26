@@ -4,6 +4,7 @@ env:
   REGISTRY: ghcr.io
   INGESTOR_IMAGE_NAME: ${{ github.repository }}
 on:
+  workflow_call:
   push:
     branches:
       - main
