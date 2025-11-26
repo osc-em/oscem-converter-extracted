@@ -29,3 +29,8 @@ jobs:
         args: release --clean
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  build_docker_image_release:
+    permissions:
+      packages: write
+      contents: read
+    uses: ./.github/workflows/ci.yaml
