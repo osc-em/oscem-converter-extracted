@@ -1,32 +1,49 @@
-# Conversions
-Converts a flat json into data conforming to the OSC-EM schema. 
+# OSC-EM Converter for Extracted Metadata
+
+Converts a flat key-value metadata extracted from a dataset into data conforming to the
+OSC-EM schema.
+
+## Overview
+
+Metadata from various file types can often be represented as a series of key-value
+pairs. To convert this metadata into terms that conform to the OSC-EM schema, a CSV file
+is used to map each key to a corresponding OSC-EM slot. This converter is designed to
+handle such transformations and can be used as a standalone tool. However, it is more
+commonly integrated into other extraction tools, such as the [life science
+extractor](https://github.com/osc-em/oscem-extractor-life/) and the [materials science
+extractor](https://github.com/osc-em/oscem-extractor-materials/). These tools internally
+produce flat key-value data structures, which are then processed by this converter to
+generate the final OSC-EM JSON output.
 
 ## Usage
+
 The converter can take any **flat json** to convert to OSC-EM, provided a mapping table in form of `.csv` .
 The csv needs to follow a similar approach to the [default one](csv/ls_conversions.csv) for life sciences, albeit at a reduced complexity, like the ones for [materials science](#materials-science-ms_conversions_emdcsv-ms_conversions_przcsv).
 It requires the following columns:
+
 - **oscem**: The OSC-EM field to map to. Fields are `.` separated for nesting. The `[N]` notation is used for arrays.
 - **fromformat**: What the key is called in the input format json.
 - **optionals**: If there are any optional namings that might map to the same field, at an increased priority if present.
 - **units**: The unit of any given field, if applicable.
-- **crunch**: The conversion factor to arrive at your desired output unit, based on the value in the input json. 
+- **crunch**: The conversion factor to arrive at your desired output unit, based on the value in the input json.
 - **type**: The type of the field. Allowed values are: Int, String, Float64, Bool.
 
-When using the Converter as a standalone tool, you can compile it using the `cmd/convert_cli/` path, then:
+When using the converter as a standalone tool, you can compile it using the `cmd/convert_cli/` path, then:
 
 ```sh
 go build main.go
 ```
 
 It accepts the following inputs:
+
 - `-i`: input json
 - `-o`: output filename (optional, will take directory name if none provided)
-- `-map`: path to the mapping file described above 
+- `-map`: path to the mapping file described above
 - `-cs`: allows you to provide the cs (spherical aberration) value for your instrument (optional)
 - `-gain_flip_rotate`: allows to provide instructions on gainreference flipping if needed (optional)
 
-
 If you want to use it inside of another go application you can also just import it as a module using:
+
 ```sh
 import github.com/oscem/Converter
 ```
@@ -62,8 +79,10 @@ Currently, the `.emd` and `.prz` metadata file formats are covered.
 These mapping tables follow the structure that was described above.
 They make extensive use of the `[N]` notation for arrays, especially to accomodate the usage of multiple detectors per acquisition.
 It can be used in the following columns:
+
 - **oscem**: Here `[N]` signifies that this OSC-EM field in an array. The elements of this array will be objects whose keys can be defined using the `.` separator as usual.
 - **fromformat**: When `[N]` is used here it operates as a placeholder, signifying that more than one metadata keys that follow a similar name convension might map to this OSC-EM field.
+
 For example, _Detectors.Detector-[N].DetectorName_ means that there could be multiple detectors following this naming pattern, where `[N]` could be replaced by anything, i.e. _Detectors.Detector-1.DetectorName_, _Detectors.Detector-ABC.DetectorName_, etc.
 All of those will be collected and form separate objects that will be added as elements to the corresponding array.
 In the case that the metadata keys do not follow a specific naming pattern that can be covered by the `[N]` notation, it is also possible to map them to the OSC-EM field inividually, by using a `;` separator within each _fromformat_ cell value.
@@ -71,4 +90,4 @@ In the case that the metadata keys do not follow a specific naming pattern that 
 ### Mapping to PDB: `pdb_conversions.csv`
 
 Lastly, this table maps (parts of) the OSC-EM schema to the PDB/EMDB mmcif dictionary.
-This is required for the [oscem-to-mmcif-converter](https://github.com/osc-em/converter-OSCEM-to-mmCIF).
+This is required for the [oscem-to-mmcif-converter](https://github.com/osc-em/oscem-converter-mmcif).

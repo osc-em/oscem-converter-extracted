@@ -10,7 +10,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/osc-em/Converter/basetypes"
+	"github.com/osc-em/oscem-converter-extracted/basetypes"
 )
 
 //go:embed csv/ls_conversions.csv

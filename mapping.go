@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/osc-em/Converter/basetypes"
+	"github.com/osc-em/oscem-converter-extracted/basetypes"
 )
 
 // Global storage for dynamic field patterns that weren't found in input and contain [N] notation.
